@@ -1,0 +1,38 @@
+{
+  "ProductService": {
+    "Entities": {
+      "Category": {
+        "Id": "Guid",
+        "Name": { "type": "string", "valueObject": "Name", "validations": { "min": 3, "max": 50 } },
+        "Description": { "type": "string", "valueObject": "Description", "validations": { "max": 250 } },
+        "Email": {
+          "type": "string",
+          "valueObject": "EmailAddress",
+          "validations": {
+            "regex": "^[\\w.-]+@[\\w.-]+\\.\\w{2,}$"
+          }
+        },
+        "Products": {
+          "type": "ICollection<Product>",
+          "navigation": true
+        }
+      },
+      "Product": {
+        "Id": "Guid",
+        "Name": { "type": "string", "valueObject": "Name" },
+        "Description": { "type": "string", "valueObject": "Description" },
+        "Price": { "type": "decimal", "valueObject": "ProductPrice" },
+        "Stock": "int",
+        "CategoryId": "Guid",
+        "Category": {
+          "type": "Category",
+          "navigation": true,
+          "foreignKey": "CategoryId"
+        }
+      }
+    },
+    "ConectionStrings": {
+      "SqlServer": "Server=localhost;Database=inventarioApp;User Id=sa;Password=Admin123$;TrustServerCertificate=true;"
+    }
+  }
+}
