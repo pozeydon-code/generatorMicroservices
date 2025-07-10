@@ -25,14 +25,18 @@ def main():
         create_solution_structure(base_path, solution_name, service, dotnet_version)
         install_efcore_nugets(base_path, service)
 
+        # TODO: Create Dependency Injection
         generate_domain_entities(base_path, service, content.get("Entities", {}))
         generate_value_objects(base_path, service, content.get("Entities", {}))
+        # TODO: Create Dependency Injection
         generate_application_layer(base_path, service, content.get("Entities", {}))
+        # TODO: Create Dependency Injection
         generate_infrastructure_layer(base_path, service, content.get("Entities", {}))
         generate_entity_configurations(base_path, service, content.get("Entities", {}))
         if "ConectionStrings" in content:
             add_connection_string_to_appsettings(base_path, service, content["ConectionStrings"])
 
+        # TODO: Create Dependency Injection
         generate_api_layer(base_path, service, content.get("Entities", {}))
         add_and_apply_migrations(base_path, service)
 

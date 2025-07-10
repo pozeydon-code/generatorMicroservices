@@ -20,3 +20,8 @@ def install_efcore_nugets(base_path, service_name):
         run_command(f"dotnet add package {pkg}", cwd=api_path)
 
     run_command(f"dotnet add package Microsoft.EntityFrameworkCore.Design", cwd=api_path)
+    # Instalar MediatR
+    app_path = os.path.join(base_service_path, f"{service_name}.Application")
+    for pkg in ["MediatR", "MediatR.Extensions.Microsoft.DependencyInjection"]:
+        run_command(f"dotnet add package {pkg}", cwd=app_path)
+        run_command(f"dotnet add package {pkg}", cwd=api_path)
