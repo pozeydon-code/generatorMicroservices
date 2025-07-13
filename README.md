@@ -16,7 +16,7 @@
 
 ---
 
-## 📖 Descripción
+## 📖 Descripción #descripción
 
 Este proyecto provee un generador automático para acelerar la creación de microservicios en C# con una arquitectura limpia (Clean Architecture). Incluye plantillas para:
 
@@ -28,16 +28,14 @@ Este proyecto provee un generador automático para acelerar la creación de micr
 
 ---
 
-## ⚙️ Características
+## ⚙️ Características #características
 
-- Generación de carpetas y archivos usando Jinja2  
-- Mapeo de tipos de C# a partir de un JSON de propiedades  
 - Esqueleto de domain, application e infrastructure  
 - Soporte para navegación y relaciones entre entidades  
 
 ---
 
-## 🛠️ Prerrequisitos
+## 🛠️ Prerrequisitos #prerrequisitos
 
 - Python 3.8+  
 - .NET 8 SDK  
@@ -45,7 +43,7 @@ Este proyecto provee un generador automático para acelerar la creación de micr
 
 ---
 
-## 🚀 Instalación
+## 🚀 Instalación #instalación
 
 1. Clona el repositorio:
    ```bash
