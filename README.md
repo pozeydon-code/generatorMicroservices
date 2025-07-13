@@ -26,14 +26,14 @@ Este proyecto provee un generador automático para acelerar la creación de micr
 
 ---
 
-## ⚙️ Características #características
+## ⚙️ Características
 
 - Esqueleto de domain, application e infrastructure  
 - Soporte para navegación y relaciones entre entidades  
 
 ---
 
-## 🛠️ Prerrequisitos #prerrequisitos
+## 🛠️ Prerrequisitos
 
 - Python 3.8+  
 - .NET 8 SDK  
@@ -41,7 +41,7 @@ Este proyecto provee un generador automático para acelerar la creación de micr
 
 ---
 
-## 🚀 Instalación #instalación
+## 🚀 Instalación
 
 1. Clona el repositorio:
    ```bash
