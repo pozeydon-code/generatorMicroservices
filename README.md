@@ -5,9 +5,9 @@
 ## 📋 Contenidos
 
 - [Descripción](#-descripción)  
-- [Características](#características)  
-- [Prerrequisitos](#prerrequisitos)  
-- [Instalación](#instalación)  
+- [Características](#-características)  
+- [Prerrequisitos](#-prerrequisitos)  
+- [Instalación](#-instalación)  
 - [Uso](#uso)  
 - [Estructura de carpetas](#estructura-de-carpetas)  
 - [TODO](#todo)  
