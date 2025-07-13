@@ -4,7 +4,7 @@
 
 ## 📋 Contenidos
 
-- [Descripción](#descripción)  
+- [Descripción](#-descripción)  
 - [Características](#características)  
 - [Prerrequisitos](#prerrequisitos)  
 - [Instalación](#instalación)  
@@ -16,7 +16,7 @@
 
 ---
 
-## 📖 Descripción(#descripción)
+## 📖 Descripción
 
 Este proyecto provee un generador automático para acelerar la creación de microservicios en C# con una arquitectura limpia (Clean Architecture). Incluye plantillas para:
 
