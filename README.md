@@ -8,9 +8,7 @@
 - [Características](#-características)  
 - [Prerrequisitos](#-prerrequisitos)  
 - [Instalación](#-instalación)  
-- [Uso](#uso)  
-- [Estructura de carpetas](#estructura-de-carpetas)  
-- [TODO](#todo)  
+- [TODO](#-todo)  
 - [Contribuciones](#contribuciones)  
 - [Licencia](#licencia)  
 
@@ -49,3 +47,13 @@ Este proyecto provee un generador automático para acelerar la creación de micr
    ```bash
    git clone https://github.com/pozeydon-code/generatorMicroservices.git
    cd generatorMicroservices
+   ```
+   
+## 📝 TODO
+
+- [ ] Verificar que se estén cargando correctamente las validaciones de las Entidades.
+- [ ] Implementar Custom Errors.
+- [ ] Crear validaciones y `try/catch` para evitar fuga de errores.
+- [ ] Implementar DTOs (quizás deba ser una carpeta con cada DTO por si crece el proyecto) para manejar respuestas más limpias.
+- [ ] Generar una versión que haga un scaffold y mapee los datos de la base, para no insertar las migraciones desde mi proyecto.
+- [ ] Generar una versión que utilice plantillas con Jinja2.
