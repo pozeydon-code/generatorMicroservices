@@ -3,8 +3,8 @@
     "Entities": {
       "Category": {
         "Id": "Guid",
-        "Name": { "type": "string", "valueObject": "Name", "validations": { "min": 3, "max": 50 } },
-        "Description": { "type": "string", "valueObject": "Description", "validations": { "max": 250 } },
+        "Name": { "type": "string", "valueObject": "Name", "validations": { "minLength": 3, "maxLength": 50 } },
+        "Description": { "type": "string", "valueObject": "Description", "validations": { "maxLength": 250 } },
         "Email": {
           "type": "string",
           "valueObject": "EmailAddress",

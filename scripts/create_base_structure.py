@@ -1,4 +1,6 @@
 import os
+from utilities.domain.generate_primitives import generate_primitives
+from utilities.filesystem.generate_global_usings import generate_global_usings_domain
 from utilities.services.apply_migrations import add_and_apply_migrations
 from utilities.services.generate_entity_configurations import generate_entity_configurations
 from utilities.services.api_layer import generate_api_layer
@@ -25,12 +27,13 @@ def main():
         create_solution_structure(base_path, solution_name, service, dotnet_version)
         install_efcore_nugets(base_path, service)
 
-        # TODO: Create Dependency Injection
         generate_domain_entities(base_path, service, content.get("Entities", {}))
         generate_value_objects(base_path, service, content.get("Entities", {}))
-        # TODO: Create Dependency Injection
+        generate_primitives(base_path, service)
+        generate_global_usings_domain(base_path, service)
+
         generate_application_layer(base_path, service, content.get("Entities", {}))
-        # TODO: Create Dependency Injection
+
         generate_infrastructure_layer(base_path, service, content.get("Entities", {}))
         generate_entity_configurations(base_path, service, content.get("Entities", {}))
         if "ConectionStrings" in content:

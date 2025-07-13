@@ -16,11 +16,14 @@ def generate_entity_code(service_name, entity_name, props):
         "using ProductService.Domain.Entities;",
         "using ProductService.Domain.ValueObjects;",
         "",
-        f"namespace {service_name}.Domain.Entities",
-        "{",
-        f"    public class {entity_name}",
-        "    {"
+        f"namespace {service_name}.Domain.Entities;",
+        f"public class {entity_name}",
+        "{"
     ]
+
+    ctor_params = []       # lista de "Tipo nombreParam"
+    assignments = []       # lista de "this.Prop = nombreParam;"
+
     for prop_name, prop_def in props.items():
         if isinstance(prop_def, dict) and prop_def.get("navigation"):
             csharp_type = parse_csharp_type(prop_def["type"])
@@ -29,8 +32,34 @@ def generate_entity_code(service_name, entity_name, props):
             csharp_type = parse_csharp_type(prop_def)
             prop_csharp_name = prop_name
 
-        lines.append(f"        public {csharp_type} {prop_csharp_name} {{ get; set; }}")
+        lines.append(f"    public {csharp_type} {prop_csharp_name} {{ get; private set; }}")
+        lines.append(f"")
+
+        # Generar un constructor para crear y un constructor para updatear
+        # ignorar navegaciones
+        if isinstance(prop_def, dict) and prop_def.get("navigation"):
+            continue
+        param_name = prop_csharp_name[0].lower() + prop_csharp_name[1:]
+        ctor_params.append(f"{csharp_type} {param_name}")
+        assignments.append(f"        {prop_csharp_name} = {param_name};")
+
+    lines.append(f"    public {entity_name} () {{ }}")
+
+    # 3) Constructor público con todos los parámetros
+    params_sig = ", ".join(ctor_params)
+    lines.append(f"    public {entity_name}({params_sig})")
+    lines.append("    {")
+    lines.extend(assignments)
     lines.append("    }")
+     # 4) Método estático Update<Entity>
+    lines.append(f"    public static {entity_name} Update{entity_name}({params_sig})")
+    lines.append("    {")
+    # argumentos en mismo orden
+    args_list = ", ".join(p.split(" ")[1] for p in ctor_params)
+    lines.append(f"        return new {entity_name}({args_list});")
+    lines.append("    }")
+
+    lines.append("")
     lines.append("}")
     return "\n".join(lines)
 
