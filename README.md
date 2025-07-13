@@ -5,8 +5,8 @@
 ## 📋 Contenidos
 
 - [Descripción](#-descripción)  
-- [Características](#-características)  
-- [Prerrequisitos](#-prerrequisitos)  
+- [Características](#%EF%B8%8F-características)  
+- [Prerrequisitos](#%EF%B8%8F-prerrequisitos)  
 - [Instalación](#-instalación)  
 - [TODO](#-todo)  
 - [Contribuciones](#contribuciones)  
